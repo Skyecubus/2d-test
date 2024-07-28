@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://13sfy6gwf18"]
+
+[ext_resource type="Texture2D" uid="uid://bekprftxn36kt" path="res://pixilart-drawing.png" id="1_6rnou"]
+[ext_resource type="Script" path="res://double_jump_boot.gd" id="2_dueiq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dyymf"]
+size = Vector2(41, 61)
+
+[node name="doubleJumpBoot" type="Sprite2D"]
+position = Vector2(11, 11)
+texture = ExtResource("1_6rnou")
+script = ExtResource("2_dueiq")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-5.5, -6.5)
+shape = SubResource("RectangleShape2D_dyymf")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

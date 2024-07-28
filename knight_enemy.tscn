@@ -1,0 +1,57 @@
+[gd_scene load_steps=8 format=3 uid="uid://bs6glgur31158"]
+
+[ext_resource type="Texture2D" uid="uid://chxctblekryfw" path="res://knight boy idle.png" id="1_2f1t3"]
+[ext_resource type="Script" path="res://knight_enemy.gd" id="1_dh27g"]
+[ext_resource type="Texture2D" uid="uid://b0jpgcgh248i3" path="res://KnightBoyWalking.png" id="2_av2ed"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6v3bc"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_2f1t3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_av2ed")
+}],
+"loop": true,
+"name": &"default",
+"speed": 2.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ctdko"]
+radius = 14.0
+height = 62.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yxasu"]
+size = Vector2(24, 39.25)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sd400"]
+size = Vector2(39, 20)
+
+[node name="KnightEnemy" type="CharacterBody2D"]
+script = ExtResource("1_dh27g")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(339.5, 102.5)
+scale = Vector2(1.43, 1.47)
+sprite_frames = SubResource("SpriteFrames_6v3bc")
+frame_progress = 0.862118
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(328, 96)
+shape = SubResource("CapsuleShape2D_ctdko")
+
+[node name="hitbox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox"]
+position = Vector2(327.5, 106.75)
+shape = SubResource("RectangleShape2D_yxasu")
+
+[node name="hurtBox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hurtBox"]
+position = Vector2(335, 72.25)
+shape = SubResource("RectangleShape2D_sd400")
+
+[connection signal="body_entered" from="hitbox" to="." method="_on_hitbox_body_entered"]
+[connection signal="body_entered" from="hurtBox" to="." method="_on_hurt_box_body_entered"]
