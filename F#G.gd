@@ -2,7 +2,10 @@ extends CharacterBody2D
 
 const FLOOR_NORMAL = Vector2.UP
 
-@export var SPEED = 300.0
+@export var speed = 300.0
+@export var walkSpeed = 300.0
+@export var runSpeed = 500.0
+const MAX_SPEED = 600.0
 const JUMP_VELOCITY = -500.0
 var totalJumps = 0
 signal isMoving
@@ -13,6 +16,7 @@ signal isMoving
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 func _physics_process(delta):
+	#this shit does the sliding on hills stuff
 	if is_on_floor():
 		set_floor_snap_length(10)
 		set_floor_max_angle(1.5)
@@ -48,10 +52,14 @@ func _physics_process(delta):
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var direction = Input.get_axis("ui_left", "ui_right")
 	if direction:
-		velocity.x = direction * SPEED
-		isMoving.emit(direction, SPEED)
+		velocity.x = direction * speed
+		isMoving.emit(direction, speed)
+		if Input.is_action_pressed('Run'):
+			speed = runSpeed
+		else: 
+			speed = walkSpeed
 	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
+		velocity.x = move_toward(velocity.x, 0, speed)
 	
 	
 
