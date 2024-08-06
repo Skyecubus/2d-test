@@ -1,7 +1,8 @@
 extends CharacterBody2D
 
+const FLOOR_NORMAL = Vector2.UP
 
-const SPEED = 300.0
+@export var SPEED = 300.0
 const JUMP_VELOCITY = -500.0
 var totalJumps = 0
 signal isMoving
@@ -12,6 +13,16 @@ signal isMoving
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 func _physics_process(delta):
+	if is_on_floor():
+		set_floor_snap_length(10)
+		set_floor_max_angle(1.5)
+	elif !is_on_floor():
+		set_floor_snap_length(5)
+		set_floor_max_angle(0.785398)
+		apply_floor_snap()
+	move_and_slide()
+	
+	
 	# Add the gravity.
 	if not is_on_floor():
 		velocity.y += gravity * delta
@@ -43,7 +54,6 @@ func _physics_process(delta):
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 	
 	
-	move_and_slide()
 
 
 func doubleJump():
