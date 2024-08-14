@@ -12,9 +12,9 @@ func _ready():
 	player = get_node("F#G")
 	camera = get_node("Camera2D")
 	doubleJumpBoot.connect("pickedUp", player.doubleJump)
-	enemy1 = get_node("KnightEnemy")
-	enemy1.connect("died", deleteEnemy)
-	enemy1.connect("kill", playerDied)
+	#enemy1 = get_node("KnightEnemy")
+	#enemy1.connect("died", deleteEnemy)
+	#enemy1.connect("kill", playerDied)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -36,3 +36,11 @@ func deleteEnemy(enemy):
 func _on_kill_plane_body_entered(body):
 	if body.is_in_group("player"):
 		playerDied()
+
+
+func _on_knight_enemy_died(entity):
+	deleteEnemy(entity)
+
+
+func _on_knight_enemy_kill():
+	playerDied()

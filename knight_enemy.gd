@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-signal died
+signal died(entity)
 signal kill
 
 const SPEED = -1.0
@@ -13,6 +13,17 @@ func _ready():
 	get_node("AnimatedSprite2D").play()
 
 func _physics_process(delta):
+	#this was taken directly from player 
+	#it makes slopes work?
+	if is_on_floor():
+		set_floor_snap_length(10)
+		set_floor_max_angle(1.5)
+	elif !is_on_floor():
+		set_floor_snap_length(5)
+		set_floor_max_angle(0.785398)
+		apply_floor_snap()
+	move_and_slide()
+	
 	# Add the gravity.
 	if not is_on_floor():
 		velocity.y += gravity * delta
