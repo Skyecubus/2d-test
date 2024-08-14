@@ -66,3 +66,9 @@ func _physics_process(delta):
 
 func doubleJump():
 	totalJumps = 1
+
+
+
+
+
+

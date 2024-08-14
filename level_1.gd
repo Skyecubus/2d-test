@@ -31,3 +31,8 @@ func playerDied():
 
 func deleteEnemy(enemy):
 	enemy.queue_free()
+
+
+func _on_kill_plane_body_entered(body):
+	if body.is_in_group("player"):
+		playerDied()

@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://bby6ctbcgouyj"]
+[gd_scene load_steps=11 format=3 uid="uid://bby6ctbcgouyj"]
 
 [ext_resource type="Texture2D" uid="uid://ttoui5ci3jfu" path="res://tilesheet_complete.png" id="1_58qee"]
 [ext_resource type="Script" path="res://level_1.gd" id="1_e8l7v"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://13sfy6gwf18" path="res://double_jump_boot.tscn" id="4_jj1n3"]
 [ext_resource type="PackedScene" uid="uid://bs6glgur31158" path="res://knight_enemy.tscn" id="5_8tqt0"]
 [ext_resource type="Script" path="res://livesCounter.gd" id="6_li0y7"]
+[ext_resource type="PackedScene" uid="uid://dcp648g5d5pon" path="res://kill_plane.tscn" id="8_7yloo"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pgpii"]
 texture = ExtResource("1_58qee")
@@ -9815,6 +9816,15 @@ offset_bottom = 73.0
 theme_override_font_sizes/font_size = 30
 text = "lives = 3"
 script = ExtResource("6_li0y7")
+
+[node name="kill plane" parent="." instance=ExtResource("8_7yloo")]
+position = Vector2(-1139, 148)
+
+[node name="kill plane2" parent="." instance=ExtResource("8_7yloo")]
+position = Vector2(1164, 150)
+
+[connection signal="body_entered" from="kill plane" to="." method="_on_kill_plane_body_entered"]
+[connection signal="body_entered" from="kill plane2" to="." method="_on_kill_plane_body_entered"]
 
 [editable path="F#G"]
 [editable path="doubleJumpBoot"]
