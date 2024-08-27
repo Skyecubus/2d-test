@@ -27,7 +27,9 @@ func playerDied():
 	else:
 		GameVars.lives -= 1
 		get_tree().change_scene_to_file("res://level_1.tscn")
-	
+
+func level_complete():
+	get_tree().change_scene_to_file("res://game_over_screen.tscn")
 
 func deleteEnemy(enemy):
 	enemy.queue_free()
@@ -44,3 +46,7 @@ func _on_knight_enemy_died(entity):
 
 func _on_knight_enemy_kill():
 	playerDied()
+
+
+func _on_level_finish_body_entered(body):
+	level_complete()
