@@ -29,7 +29,7 @@ func playerDied():
 		get_tree().change_scene_to_file("res://level_1.tscn")
 
 func level_complete():
-	get_tree().change_scene_to_file("res://game_over_screen.tscn")
+	get_tree().change_scene_to_file("res://hub_area.tscn")
 
 func deleteEnemy(enemy):
 	enemy.queue_free()
