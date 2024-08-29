@@ -4,6 +4,7 @@ var doubleJumpBoot
 var player
 var camera 
 var enemy1
+var levelFinished = false
 
 
 # Called when the node enters the scene tree for the first time.
@@ -19,7 +20,9 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	pass
+	if levelFinished:
+		if Input.is_action_just_pressed("ui_accept"):
+			level_complete()
 	
 func playerDied():
 	if GameVars.lives <= 0:
@@ -49,4 +52,8 @@ func _on_knight_enemy_kill():
 
 
 func _on_level_finish_body_entered(body):
-	level_complete()
+	levelFinished = true
+
+
+func _on_level_finish_body_exited(body):
+	levelFinished = false
