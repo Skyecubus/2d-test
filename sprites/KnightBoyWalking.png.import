@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://fuvrm2m4dur0"
-path="res://.godot/imported/F#G1.png-31d505c2dc88b1048d7ed5dfb319df75.ctex"
+uid="uid://b0jpgcgh248i3"
+path="res://.godot/imported/KnightBoyWalking.png-68b76f66e25ace7e244d674c91d55e3b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://F#G1.png"
-dest_files=["res://.godot/imported/F#G1.png-31d505c2dc88b1048d7ed5dfb319df75.ctex"]
+source_file="res://sprites/KnightBoyWalking.png"
+dest_files=["res://.godot/imported/KnightBoyWalking.png-68b76f66e25ace7e244d674c91d55e3b.ctex"]
 
 [params]
 

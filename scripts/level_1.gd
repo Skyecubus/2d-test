@@ -21,7 +21,7 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if levelFinished:
-		if Input.is_action_just_pressed("ui_accept"):
+		if Input.is_action_just_pressed("Select"):
 			level_complete()
 	
 func playerDied():

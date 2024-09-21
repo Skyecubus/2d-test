@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://13sfy6gwf18"]
 
-[ext_resource type="Texture2D" uid="uid://bekprftxn36kt" path="res://pixilart-drawing.png" id="1_6rnou"]
-[ext_resource type="Script" path="res://double_jump_boot.gd" id="2_dueiq"]
+[ext_resource type="Texture2D" uid="uid://bekprftxn36kt" path="res://sprites/pixilart-drawing.png" id="1_6rnou"]
+[ext_resource type="Script" path="res://scripts/double_jump_boot.gd" id="2_dueiq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dyymf"]
 size = Vector2(41, 61)

@@ -2,6 +2,7 @@ extends CharacterBody2D
 
 const FLOOR_NORMAL = Vector2.UP
 
+
 @export var speed = 300.0
 @export var walkSpeed = 300.0
 @export var runSpeed = 500.0
@@ -11,9 +12,14 @@ var totalJumps = 0
 signal isMoving
 @export var jumpsLeft = totalJumps
 
-
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
+
+
+func _ready():
+	if GameVars.doubleJumpAcquired:
+		totalJumps = 1
+	
 
 func _physics_process(delta):
 	#this shit does the sliding on hills stuff
@@ -65,6 +71,7 @@ func _physics_process(delta):
 
 
 func doubleJump():
+	GameVars.doubleJumpAcquired = true
 	totalJumps = 1
 
 

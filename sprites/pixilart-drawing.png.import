@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://chxctblekryfw"
-path="res://.godot/imported/knight boy idle.png-298f92d5ccf3b2bdb3963a97ac36ddc8.ctex"
+uid="uid://bekprftxn36kt"
+path="res://.godot/imported/pixilart-drawing.png-dc962ae04073dc00cbbaf0a28ba112c8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://knight boy idle.png"
-dest_files=["res://.godot/imported/knight boy idle.png-298f92d5ccf3b2bdb3963a97ac36ddc8.ctex"]
+source_file="res://sprites/pixilart-drawing.png"
+dest_files=["res://.godot/imported/pixilart-drawing.png-dc962ae04073dc00cbbaf0a28ba112c8.ctex"]
 
 [params]
 

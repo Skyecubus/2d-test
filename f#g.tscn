@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://c8gb3ln8q5xx7"]
 
-[ext_resource type="Script" path="res://F#G.gd" id="1_7m5tu"]
-[ext_resource type="Texture2D" uid="uid://fuvrm2m4dur0" path="res://F#G1.png" id="2_228iv"]
+[ext_resource type="Script" path="res://scripts/F#G.gd" id="1_7m5tu"]
+[ext_resource type="Texture2D" uid="uid://fuvrm2m4dur0" path="res://sprites/F#G1.png" id="2_8c0gc"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0ut4x"]
 radius = 40.0
@@ -13,7 +13,7 @@ script = ExtResource("1_7m5tu")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(19, -15)
 scale = Vector2(0.505, 0.435)
-texture = ExtResource("2_228iv")
+texture = ExtResource("2_8c0gc")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(1, -9)

@@ -1,8 +1,8 @@
 [gd_scene load_steps=9 format=3 uid="uid://bs6glgur31158"]
 
-[ext_resource type="Texture2D" uid="uid://chxctblekryfw" path="res://knight boy idle.png" id="1_2f1t3"]
-[ext_resource type="Script" path="res://knight_enemy.gd" id="1_dh27g"]
-[ext_resource type="Texture2D" uid="uid://b0jpgcgh248i3" path="res://KnightBoyWalking.png" id="2_av2ed"]
+[ext_resource type="Texture2D" uid="uid://chxctblekryfw" path="res://sprites/knight boy idle.png" id="1_2f1t3"]
+[ext_resource type="Script" path="res://scripts/knight_enemy.gd" id="1_dh27g"]
+[ext_resource type="Texture2D" uid="uid://b0jpgcgh248i3" path="res://sprites/KnightBoyWalking.png" id="2_av2ed"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_6v3bc"]
 animations = [{
