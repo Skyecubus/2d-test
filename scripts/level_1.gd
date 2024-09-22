@@ -29,7 +29,7 @@ func playerDied():
 		get_tree().change_scene_to_file("res://game_over_screen.tscn")
 	else:
 		GameVars.lives -= 1
-		get_tree().change_scene_to_file("res://level_1.tscn")
+		get_tree().change_scene_to_file("res://level_1_1.tscn")
 
 func level_complete():
 	get_tree().change_scene_to_file("res://hub_area.tscn")
@@ -41,6 +41,7 @@ func deleteEnemy(enemy):
 func _on_kill_plane_body_entered(body):
 	if body.is_in_group("player"):
 		playerDied()
+		print("dead")
 
 
 func _on_knight_enemy_died(entity):
